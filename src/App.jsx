@@ -1,10 +1,16 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
+import api from './api/axiosConfig.js';
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(0);
+  const [trainings, setTrainings] = userState();
+
+  const getTraingins = async () =>{
+      const response = await api.get("/api/v1/traingins")
+  }
 
   return (
     <>
